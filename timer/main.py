@@ -1,11 +1,13 @@
 import time
-#from buy_sell_stock_2 import *
+import sys
+sys.path.insert(0, '../tiq/array')
+from remove_duplicates import Solution
 
 def main():
-    #s = Solution()
+    s = Solution()
     start_time = time.time()
-    for _ in range(1):
-    #    s()
+    for _ in range(100000):
+        s()
     end_time = time.time()
     print("--- %f seconds ---" % (end_time - start_time))
     return

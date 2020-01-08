@@ -1,6 +1,6 @@
 #include <iostream>
 #include <chrono>
-#include "remove_duplicates.cpp"
+#include "../tiq/array/remove_duplicates.cpp"
 
 int main(int argc, char const *argv[])
 {
@@ -10,9 +10,9 @@ int main(int argc, char const *argv[])
         s();
     }
     auto finish = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> elapsed = finish - start;
+    std::chrono::duration<double> elapsed = (finish - start);
 
-    std::cout << "--- " << elapsed.count() << " ---\n";
+    std::cout << "--- " << elapsed.count() << " seconds ---\n";
 
     return 0;
 }
