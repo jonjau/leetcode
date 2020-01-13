@@ -1,14 +1,18 @@
 package tiq.array;
 
-/**
- * BuySellStock2
+/** 
+ * 
+ * Say you have an array for which the ith element is the price of
+ * a given stock on day i. Design an algorithm to find the maximum profit. You
+ * may complete as many transactions as you like (i.e., buy one and sell one
+ * share of the stock multiple times).
  */
 public class BuySellStock2 {
 
     public static int run() {
         int[] l1 = {7,1,5,3,6,4}; //7
-        int[] l2 = {1,2,3,4,5}; //4
-        int[] l3 = {7,6,4,3,1}; //0
+        //int[] l2 = {1,2,3,4,5}; //4
+        //int[] l3 = {7,6,4,3,1}; //0
 
         return buySellStock2(l1);
     }
