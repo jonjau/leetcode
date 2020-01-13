@@ -1,6 +1,6 @@
 package timer;
 
-import static tiq.array.RotateArray.*;
+import static tiq.array.ContainsDuplicate.*;
 
 /**
  * Main
@@ -12,7 +12,6 @@ public class Main {
         int repeats = 1;
         System.out.println("Now running " + repeats + " time(s):");
         for (int i=0; i<repeats; i++) {
-            setup(10);
             long startTime = System.nanoTime();
             run();
             long endTime = System.nanoTime();
