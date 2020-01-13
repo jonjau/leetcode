@@ -16,7 +16,6 @@ class Solution:
         l2 = [1,2,3,4,5] #4
         l3 = [7,6,4,3,1] #0
         ans = self.maxProfit2(l1)
-        print(ans)
         return ans
 
     # Greedy and verbose solution

@@ -1,6 +1,6 @@
 package timer;
 
-import tiq.array.RemoveDuplicatesFromSortedArray;
+import static tiq.array.BuySellStock2.run;
 
 /**
  * Main
@@ -8,12 +8,13 @@ import tiq.array.RemoveDuplicatesFromSortedArray;
 public class Main {
 
     public static void main(String[] args) {
-        RemoveDuplicatesFromSortedArray solution
-            = new RemoveDuplicatesFromSortedArray();
 
+        int repeats = 100_000;
+        System.out.println(run());
+        System.out.println("Now running " + repeats + " times:");
         long startTime = System.nanoTime();
-        for (int i=0; i<100000; i++) {
-            solution.run();
+        for (int i=0; i<repeats; i++) {
+            run();
         }
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
