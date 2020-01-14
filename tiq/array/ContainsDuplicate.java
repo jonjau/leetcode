@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * ContainsDuplicate
+ * Given an array of integers, find if the array contains any duplicates.
  */
 public class ContainsDuplicate {
 
@@ -30,7 +30,8 @@ public class ContainsDuplicate {
     /**
      * Build a set and check for membership
      * 
-     * O(nlogn) time, O(1) space
+     * O(n) time, O(n) space
+     * (hash lookup is linear!)
      */
     public static boolean containsDuplicate2(int[] nums) {
         Set<Integer> set = new HashSet<>(nums.length);
