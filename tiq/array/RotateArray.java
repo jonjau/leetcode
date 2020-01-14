@@ -1,7 +1,5 @@
 package tiq.array;
 
-import java.util.Arrays;
-
 import tiq.array.util.RandomIntArray;
 
 /**
