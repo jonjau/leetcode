@@ -1,6 +1,7 @@
 package tiq.array.util;
 
 import java.util.Random;
+import java.util.Arrays;
 
 /**
  * RandomIntArray
@@ -17,5 +18,9 @@ public class RandomIntArray {
             array[i] = random.nextInt(max);
         }
         return array;
+    }
+    
+    public static void printIntArray(int[] array) {
+        System.out.println(Arrays.toString(array));
     }
 }

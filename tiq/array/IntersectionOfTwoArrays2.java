@@ -22,10 +22,7 @@ public class IntersectionOfTwoArrays2 {
 
     public static int[] run() {
         
-        //printIntArray(array1);
-        //printIntArray(array2);
         int[] intersection = intersectionOfTwoArrays2_2(array1, array2);
-        //printIntArray(intersection);
         return intersection;
     }
 
@@ -90,8 +87,5 @@ public class IntersectionOfTwoArrays2 {
             result[i] = intersection.get(i);
         }
         return result;
-    }
-    public static void printIntArray(int[] array) {
-        System.out.println(Arrays.toString(array));
     }
 }

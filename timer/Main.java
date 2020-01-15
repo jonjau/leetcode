@@ -1,6 +1,6 @@
 package timer;
 
-import static tiq.array.IntersectionOfTwoArrays2.*;
+import static tiq.array.PlusOne.*;
 
 /**
  * Main
@@ -11,7 +11,6 @@ public class Main {
 
         int repeats = 1;
         System.out.println("Now running " + repeats + " time(s):");
-        setup(100_000);
         for (int i=0; i<repeats; i++) {
             long startTime = System.nanoTime();
             run();
