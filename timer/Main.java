@@ -1,6 +1,6 @@
 package timer;
 
-import static tiq.array.SingleUniqueNumber.*;
+import static tiq.array.IntersectionOfTwoArrays2.*;
 
 /**
  * Main
@@ -11,9 +11,10 @@ public class Main {
 
         int repeats = 1;
         System.out.println("Now running " + repeats + " time(s):");
+        setup(100_000);
         for (int i=0; i<repeats; i++) {
             long startTime = System.nanoTime();
-            System.out.println(run());
+            run();
             long endTime = System.nanoTime();
             long elapsedTime = endTime - startTime;
             // 1 second = 1_000_000_000 nanoseconds

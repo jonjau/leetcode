@@ -18,6 +18,7 @@ public class SingleUniqueNumber {
 
     /**
      * building map, then finding that with count 1
+     * <p>
      * O(n) time, O(n) space
      */
     public static Integer singleUniqueNumber1(int[] nums) {
@@ -44,6 +45,7 @@ public class SingleUniqueNumber {
     /**
      * Adding new elements and removing new elements from set,
      * leaving the unique to be the last remaining item in that set
+     * <p>
      * O(n) time, O(n) space
      */
     public static Integer singleUniqueNumber2(int[] nums) {
@@ -63,6 +65,7 @@ public class SingleUniqueNumber {
 
     /**
      * Bitwise XOR, since N ^ N = 0, and 0 ^ N = N
+     * <p>
      * O(n) time, O(1) space
      */
     public static Integer singleUniqueNumber3(int[] nums) {
