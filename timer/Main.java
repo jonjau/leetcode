@@ -1,6 +1,6 @@
 package timer;
 
-import static tiq.array.PlusOne.*;
+import static tiq.array.MoveZeroes.*;
 
 /**
  * Main
