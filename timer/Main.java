@@ -1,6 +1,6 @@
 package timer;
 
-import static tiq.array.MoveZeroes.*;
+import static tiq.array.TwoSum.*;
 
 /**
  * Main
