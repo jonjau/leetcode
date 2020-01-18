@@ -1,6 +1,6 @@
 package timer;
 
-import static tiq.array.TwoSum.*;
+import static tiq.array.ValidSudoku.*;
 
 /**
  * Main
