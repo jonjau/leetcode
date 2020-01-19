@@ -1,6 +1,6 @@
 package tiq.array;
 
-import tiq.array.util.RandomIntArray;
+import tiq.util.ArrayUtils;
 
 /**
  * Given an array nums, write a function to move all 0's to the end of it while
@@ -11,7 +11,7 @@ public class MoveZeroes {
     public static void run() {
         int[] nums = {0,1,0,3,12};
         moveZeroes1(nums);
-        RandomIntArray.printIntArray(nums);
+        ArrayUtils.printIntArray(nums);
     }
     
     /**

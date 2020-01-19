@@ -1,6 +1,6 @@
 package tiq.array;
 
-import tiq.array.util.RandomIntArray;
+import tiq.util.ArrayUtils;
 
 /**
  * Given an array, rotate the array to the right by k steps, where k is
@@ -10,7 +10,7 @@ public class RotateArray {
 
     private static int[] array;
     public static void setup(int n) {
-        array = RandomIntArray.nonnegatives(n, 100);
+        array = ArrayUtils.nonnegatives(n, 100);
     }
 
     public static int[] run() {

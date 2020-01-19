@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import tiq.array.util.RandomIntArray;
+import tiq.util.ArrayUtils;
 
 /**
  * Given two arrays, write a function to compute their intersection.
@@ -16,8 +16,8 @@ public class IntersectionOfTwoArrays2 {
     private static int[] array1;
     private static int[] array2;
     public static void setup(int n) {
-        array1 = RandomIntArray.nonnegatives(n, 100, 123);
-        array2 = RandomIntArray.nonnegatives(n, 100, 321);
+        array1 = ArrayUtils.nonnegatives(n, 100, 123);
+        array2 = ArrayUtils.nonnegatives(n, 100, 321);
     }
 
     public static int[] run() {
