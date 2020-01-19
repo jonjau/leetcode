@@ -28,7 +28,7 @@ public class ArrayUtils {
     public static void print2DIntArray(int[][] A) {
         System.out.println("[");
         for (int[] array : A) {
-            System.out.println("    ");
+            System.out.print("    ");
             printIntArray(array);
         }
         System.out.println("]");
