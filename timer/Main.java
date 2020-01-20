@@ -1,5 +1,7 @@
 package timer;
 
+import static tiq.string.ReverseString.run;
+
 /**
  * Main
  */
@@ -11,7 +13,7 @@ public class Main {
         System.out.println("Now running " + repeats + " time(s):");
         for (int i=0; i<repeats; i++) {
             long startTime = System.nanoTime();
-            tiq.array.RotateImage.run();
+            tiq.string.ReverseString.run();
             long endTime = System.nanoTime();
             long elapsedTime = endTime - startTime;
             // 1 second = 1_000_000_000 nanoseconds
