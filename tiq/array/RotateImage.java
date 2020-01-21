@@ -7,17 +7,14 @@ import tiq.util.ArrayUtils;
  * <p>
  * Rotate the image by 90 degrees (clockwise).
  * <p>
- * You have to rotate the image in-place, which means you have to modify the input 2D matrix directly.
- * DO NOT allocate another 2D matrix and do the rotation.
+ * You have to rotate the image in-place, which means you have to modify the
+ * input 2D matrix directly. DO NOT allocate another 2D matrix and do the
+ * rotation.
  */
 public class RotateImage {
     public static void run() {
-        int[][] matrix = {
-                {5, 1, 9, 11},
-                {2, 4, 8, 10},
-                {13, 3, 6, 7},
-                {15, 14, 12, 16}
-        };
+        int[][] matrix = { { 5, 1, 9, 11 }, { 2, 4, 8, 10 }, { 13, 3, 6, 7 },
+                { 15, 14, 12, 16 } };
         ArrayUtils.print2DIntArray(matrix);
         rotateClockwise(matrix);
         ArrayUtils.print2DIntArray(matrix);
@@ -28,8 +25,10 @@ public class RotateImage {
     /**
      * Reverses an array of T's.
      *
-     * @param array array to be reversed
-     * @param <T>   type of array elements
+     * @param array
+     *                  array to be reversed
+     * @param <T>
+     *                  type of array elements
      */
     private static <T> void reverse(T[] array) {
         int frontIndex = 0;
@@ -46,11 +45,12 @@ public class RotateImage {
     /**
      * Rotates a square matrix of integers 90 degrees clockwise.
      * <p>
-     * O(n^2) time approx., O(n) space approx.
-     * where n is the length of one side of the square matrix.
+     * O(n^2) time approx., O(n) space approx. where n is the length of one side
+     * of the square matrix.
      * </p>
      *
-     * @param matrix 2D matrix of integers
+     * @param matrix
+     *                   2D matrix of integers
      */
     public static void rotateClockwise(int[][] matrix) {
         reverse(matrix);
@@ -66,11 +66,12 @@ public class RotateImage {
     /**
      * Rotates a square matrix of integers 90 degrees anti-clockwise.
      * <p>
-     * O(n^2) time approx., O(n) space approx.
-     * where n is the length of one side of the square matrix.
+     * O(n^2) time approx., O(n) space approx. where n is the length of one side
+     * of the square matrix.
      * </p>
      *
-     * @param matrix 2D matrix of integers
+     * @param matrix
+     *                   2D matrix of integers
      */
     public static void rotateAntiClockwise(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {

@@ -1,7 +1,13 @@
 .vs/
 .vscode/
+eclipse-formatter.xml
+
 __pycache__/
+
 *.class
+
 *.exe
+
+
 .idea/
 out/
