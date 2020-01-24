@@ -1,6 +1,5 @@
 package timer;
 
-
 /**
  * Main
  */
@@ -10,9 +9,9 @@ public class Main {
 
         int repeats = 1;
         System.out.println("Now running " + repeats + " time(s):");
-        for (int i=0; i<repeats; i++) {
+        for (int i = 0; i < repeats; i++) {
             long startTime = System.nanoTime();
-            Object ans = tiq.string.ValidAnagram.run();
+            Object ans = tiq.string.ValidPalindrome.run();
             print(ans);
             long endTime = System.nanoTime();
             long elapsedTime = endTime - startTime;
