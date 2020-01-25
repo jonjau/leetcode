@@ -31,16 +31,14 @@ public class ReverseInteger {
             int pop = x % 10;
             x /= 10;
 
-            // the second cases of these overflow/underflow checks are redundant; they are
+            // the second cases of these overflow checks are redundant; they are
             // impossible since the input itself is a signed integer (it is bounded as well)
 
-            // check for integer overflow
             // last digit of Integer.MAX_VALUE is 7
             if (reversed > Integer.MAX_VALUE / 10
                     || (reversed == Integer.MAX_VALUE / 10 && pop > 7)) {
                 return 0;
             }
-            // check for integer underflow
             // last digit of Integer.MIN_VALUE is 8 (note MIN_VALUE is a negative number)
             if (reversed < Integer.MIN_VALUE / 10
                     || (reversed == Integer.MIN_VALUE / 10 && pop < -8)) {
@@ -99,7 +97,7 @@ public class ReverseInteger {
             // push 'pop' as rightmost digit
             int temp = result * 10 + pop;
 
-            // in the case of any overflow/underflow, pushing operation will be "irreversible"
+            // in the case of any overflow, pushing operation will be "irreversible"
             if ((temp - pop) / 10 != result) {
                 return 0;
             }

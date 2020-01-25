@@ -20,7 +20,7 @@ public class ReverseString {
     /**
      * reverses a string given as a char[] by swapping with two pointers
      * converging at the middle
-     * 
+     *
      * <p> O(n) time, O(1) space </p>
      *
      * @param s char[] to be reversed, contains only printable ASCII characters
