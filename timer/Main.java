@@ -11,7 +11,7 @@ public class Main {
         System.out.println("Now running " + repeats + " time(s):");
         for (int i = 0; i < repeats; i++) {
             long startTime = System.nanoTime();
-            Object ans = tiq.string.CountAndSay.run();
+            Object ans = tiq.string.LongestCommonPrefix.run();
             print(ans);
             long endTime = System.nanoTime();
             long elapsedTime = endTime - startTime;
