@@ -30,6 +30,12 @@ package tiq.linkedlist;
  * Do not return anything from your function.
  */
 public class DeleteNode {
+    public static void run() {
+        ListNode list = new ListNode(1);
+        list.append(2).append(3).append(4).append(5);
+        deleteNode(list);
+    }
+
     /**
      * The usual way of deleting a node node from a linked list is to modify the next pointer of the
      * node before it, to point to the node after it.
