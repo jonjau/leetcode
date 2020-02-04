@@ -1,5 +1,7 @@
 package tiq.linkedlist;
 
+import tiq.util.ListUtils;
+
 public class MergeTwoSortedLists {
     public static ListNode run() {
         ListNode l1 = new ListNode(1);
@@ -7,7 +9,12 @@ public class MergeTwoSortedLists {
         ListNode l2 = new ListNode(2);
         l2.append(7).append(9).append(19).append(20);
 
-        return mergeTwoSortedLists1(l1, l2);
+        System.out.println(ListUtils.asString(l1));
+        System.out.println(ListUtils.asString(l2));
+        ListNode l3 = mergeTwoSortedLists1(l1, l2);
+        System.out.println(ListUtils.asString(l3));
+
+        return l3;
     }
 
     /**

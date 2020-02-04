@@ -1,5 +1,7 @@
 package tiq.linkedlist;
 
+import tiq.util.ListUtils;
+
 /**
  * Reverse a singly linked list.
  * <p>
@@ -16,7 +18,10 @@ public class ReverseLinkedList {
     public static ListNode run() {
         ListNode l1 = new ListNode(1);
         l1.append(2).append(3).append(4);
-        return reverseLinkedList1(l1);
+        System.out.println(ListUtils.asString(l1));
+        ListNode l2 = reverseLinkedList1(l1);
+        System.out.println(ListUtils.asString(l2));
+        return l2;
     }
 
     /**

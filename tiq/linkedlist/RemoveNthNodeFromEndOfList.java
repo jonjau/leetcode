@@ -1,5 +1,9 @@
 package tiq.linkedlist;
 
+import tiq.util.ListUtils;
+
+import java.util.List;
+
 /**
  * Given a linked list, remove the n-th node from the end of list and return its head.
  * <p>
@@ -21,10 +25,14 @@ public class RemoveNthNodeFromEndOfList {
     public static void run() {
         ListNode l1 = new ListNode(1);
         l1.append(2).append(3).append(4).append(5);
+        System.out.println(ListUtils.asString(l1));
         removeNthNodeFromEndOfList2(l1, 2);
+        System.out.println(ListUtils.asString(l1));
 
         ListNode l2 = new ListNode(1);
+        System.out.println(ListUtils.asString(l2));
         removeNthNodeFromEndOfList2(l2, 1);
+        System.out.println(ListUtils.asString(l2));
     }
 
     /**
