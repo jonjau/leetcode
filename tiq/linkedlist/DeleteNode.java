@@ -1,5 +1,7 @@
 package tiq.linkedlist;
 
+import tiq.util.ListUtils;
+
 /**
  * Definition for singly-linked list.
  * <p>
@@ -33,7 +35,9 @@ public class DeleteNode {
     public static void run() {
         ListNode list = new ListNode(1);
         list.append(2).append(3).append(4).append(5);
+        System.out.println(ListUtils.asString(list));
         deleteNode(list);
+        System.out.println(ListUtils.asString(list));
     }
 
     /**

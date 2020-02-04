@@ -1,8 +1,8 @@
 package tiq.linkedlist;
 
 public class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
     /**
      * @param x value that this ListNode contains
