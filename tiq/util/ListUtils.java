@@ -14,4 +14,13 @@ public class ListUtils {
         }
         return sb.toString();
     }
+
+    public static ListNode fromArray(int[] array) {
+        ListNode dummy = new ListNode(0);
+        ListNode temp = dummy.next;
+        for (int value : array) {
+            temp.append(value);
+        }
+        return dummy.next;
+    }
 }
