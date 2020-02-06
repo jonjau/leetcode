@@ -17,9 +17,10 @@ public class ListUtils {
 
     public static ListNode fromArray(int[] array) {
         ListNode dummy = new ListNode(0);
-        ListNode temp = dummy.next;
+        ListNode head = dummy;
         for (int value : array) {
-            temp.append(value);
+            head.next = new ListNode(value);
+            head = head.next;
         }
         return dummy.next;
     }
