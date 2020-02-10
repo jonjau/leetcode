@@ -6,3 +6,4 @@
 ## Hard
 
 * PalindromeLinkedList: helper functions
+* MaximumDepth: DEPTH-FIRST SEARCH, BREADTH-FIRST SEARCH
