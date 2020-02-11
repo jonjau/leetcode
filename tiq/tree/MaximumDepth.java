@@ -27,7 +27,7 @@ import java.util.Stack;
 public class MaximumDepth {
     public static int run() {
         int[] values = {9, 20, 15, 7};
-        BinaryTree tree = new BinaryTree(3);
+        BinarySearchTree tree = new BinarySearchTree(3);
         for (int value : values) {
             tree.add(value);
         }

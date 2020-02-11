@@ -4,12 +4,13 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
+ * Actually a BINARY SEARCH TREE, not just any binary tree
  * #j from Baeldung
  */
-public class BinaryTree {
+public class BinarySearchTree {
     TreeNode root;
 
-    public BinaryTree(int rootValue) {
+    public BinarySearchTree(int rootValue) {
         this.root = new TreeNode(rootValue);
     }
 
