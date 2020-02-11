@@ -9,10 +9,19 @@ import java.util.Queue;
 public class BinaryTree {
     TreeNode root;
 
+    public BinaryTree(int rootValue) {
+        this.root = new TreeNode(rootValue);
+    }
+
+    public TreeNode getRoot() {
+        return this.root;
+    }
+
     /**
      * Recursive insertion method
+     *
      * @param current current node to consider
-     * @param value value to be inserted
+     * @param value   value to be inserted
      * @return the inserted TreeNode with the given value
      */
     private TreeNode addRecursive(TreeNode current, int value) {
@@ -30,6 +39,7 @@ public class BinaryTree {
 
     /**
      * Insert value in sorted order
+     *
      * @param value the value to be added
      */
     public void add(int value) {
@@ -38,8 +48,9 @@ public class BinaryTree {
 
     /**
      * Recursive finding method
+     *
      * @param current current node to consider
-     * @param value value to be checked for
+     * @param value   value to be checked for
      * @return whether the value is under the current node
      */
     private boolean containsValueRecursive(TreeNode current, int value) {
@@ -57,6 +68,7 @@ public class BinaryTree {
 
     /**
      * Find value in tree
+     *
      * @param value the value to be found
      */
     public boolean containsValue(int value) {
@@ -70,6 +82,7 @@ public class BinaryTree {
      * <p>
      * In-order traversal consists of first visiting the left sub-tree, then the root node, and
      * finally the right sub-tree
+     *
      * @param node the node from which to traverse
      */
     public void traverseInOrder(TreeNode node) {
@@ -85,6 +98,7 @@ public class BinaryTree {
      * <p>
      * Pre-order traversal visits first the root node, then the left subtree, and finally the right
      * subtree
+     *
      * @param node the node from which to traverse
      */
     public void traversePreOrder(TreeNode node) {
@@ -100,6 +114,7 @@ public class BinaryTree {
      * <p>
      * Post-order traversal visits the left subtree, the right subtree,
      * and the root node at the end
+     *
      * @param node the node from which to traverse
      */
     public void traversePostOrder(TreeNode node) {
@@ -133,7 +148,7 @@ public class BinaryTree {
                 nodes.add(node.left);
             }
 
-            if (node.right!= null) {
+            if (node.right != null) {
                 nodes.add(node.right);
             }
         }
