@@ -88,7 +88,7 @@ public class BinaryTree {
     public void traverseInOrder(TreeNode node) {
         if (node != null) {
             traverseInOrder(node.left);
-            System.out.println(" " + node.val);
+            System.out.print(" " + node.val);
             traverseInOrder(node.right);
         }
     }
@@ -103,7 +103,7 @@ public class BinaryTree {
      */
     public void traversePreOrder(TreeNode node) {
         if (node != null) {
-            System.out.println(" " + node.val);
+            System.out.print(" " + node.val);
             traversePreOrder(node.left);
             traversePreOrder(node.right);
         }
@@ -121,7 +121,7 @@ public class BinaryTree {
         if (node != null) {
             traversePostOrder(node.left);
             traversePostOrder(node.right);
-            System.out.println(" " + node.val);
+            System.out.print(" " + node.val);
         }
     }
 
