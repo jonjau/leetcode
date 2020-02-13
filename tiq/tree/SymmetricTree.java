@@ -1,5 +1,8 @@
 package tiq.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
  * <p>
@@ -74,5 +77,41 @@ public class SymmetricTree {
      */
     public static boolean isSymmetric1(TreeNode root) {
         return isMirror(root, root);
+    }
+
+    /**
+     * Iterative method using queue (SIMILAR TO BREADTH-FIRST SEARCH)
+     * <p>
+     *     O(n) time, O(n) space
+     * </p>
+     *
+     * Instead of recursion, we can also use iteration with the aid of a queue. Each two consecutive
+     * nodes in the queue should be equal, and their subtrees a mirror of each other. Initially, the
+     * queue contains root and root. Then the algorithm works similarly to BFS, with some key
+     * differences. Each time, two nodes are extracted and their values compared. Then, the right
+     * and left children of the two nodes are inserted in the queue in opposite order. The algorithm
+     * is done when either the queue is empty, or we detect that the tree is not symmetric (i.e. we
+     * pull out two consecutive nodes from the queue that are unequal).
+     *
+     * @param root the root node of the binary tree
+     * @return whether the given binary tree is symmetric
+     */
+    public static boolean isSymmetric2(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        // start with both "pointers" at root, then they will diverge
+        queue.add(root);
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode node1 = queue.poll();
+            TreeNode node2 = queue.poll();
+            if (node1 == null && node2 == null) continue;
+            if (node1 == null || node2 == null) return false;
+            if (node1.val != node2.val) return false;
+            queue.add(node1.left);
+            queue.add(node2.right);
+            queue.add(node1.right);
+            queue.add(node2.left);
+        }
+        return true;
     }
 }
