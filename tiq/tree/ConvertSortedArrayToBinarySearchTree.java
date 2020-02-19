@@ -1,6 +1,8 @@
 package tiq.tree;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -28,7 +30,9 @@ public class ConvertSortedArrayToBinarySearchTree {
         System.out.println(Arrays.toString(values));
 
         System.out.println("\nConvert to BST:");
-        TreeNode root = convertSortedArrayToBST2(values);
+        // Iterative DFS and BFS approached are similar in speed, recursive DFS is slightly faster
+        // for this specific test case
+        TreeNode root = convertSortedArrayToBST3(values);
         return root;
     }
 
@@ -96,6 +100,48 @@ public class ConvertSortedArrayToBinarySearchTree {
             if (currNode.leftIndex < medianIndex) {
                 currNode.node.left = new TreeNode(0);
                 nodeStack.push(new MyNode(currNode.node.left, currNode.leftIndex, medianIndex - 1));
+            }
+        }
+        return root;
+    }
+
+    /**
+     * Iterative BFS to convert sorted array to (height-balanced) BST
+     * <p>
+     * O(n) time, O(n) space
+     * </p>
+     *
+     * @param nums the array of integers to be converted to a BST
+     * @return the root node of the resultant BST
+     */
+    public static TreeNode convertSortedArrayToBST3(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+        final int leftIndex = 0;
+        final int rightIndex = nums.length - 1;
+        // TreeNode values are placeholders, will be assigned after it is polled from the queue
+        TreeNode root = new TreeNode(0);
+        Queue<MyNode> nodeQueue = new LinkedList<>();
+        nodeQueue.offer(new MyNode(root, leftIndex, rightIndex));
+
+        while (!nodeQueue.isEmpty()) {
+            int size = nodeQueue.size();
+            for (int i = 0; i < size; i++) {
+                MyNode currNode = nodeQueue.poll();
+                assert currNode != null;
+                int medianIndex = midpoint(currNode.leftIndex, currNode.rightIndex);
+                currNode.node.val = nums[medianIndex];
+
+                if (medianIndex != currNode.leftIndex) {
+                    currNode.node.left = new TreeNode(0);
+                    nodeQueue.offer(new MyNode(currNode.node.left, currNode.leftIndex, medianIndex - 1));
+                }
+
+                if (medianIndex != currNode.rightIndex) {
+                    currNode.node.right = new TreeNode(0);
+                    nodeQueue.offer(new MyNode(currNode.node.right, medianIndex + 1, currNode.rightIndex));
+                }
             }
         }
         return root;
