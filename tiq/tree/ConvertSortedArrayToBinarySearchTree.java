@@ -1,6 +1,7 @@
 package tiq.tree;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 /**
  * Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
@@ -22,18 +23,18 @@ import java.util.Arrays;
  */
 public class ConvertSortedArrayToBinarySearchTree {
     public static TreeNode run() {
-        int[] values = {9, 20, 15, 7};
+        int[] values = {-10, -3, 0, 5, 9};
         Arrays.sort(values);
         System.out.println(Arrays.toString(values));
 
         System.out.println("\nConvert to BST:");
-        TreeNode root = convertSortedArrayToBST1(values);
+        TreeNode root = convertSortedArrayToBST2(values);
         return root;
     }
 
     /**
-     * Converts a sorted array of integers to a binary search tree:
-     * Recursive method
+     * Converts a sorted array of integers to a (height-balanced) binary search tree:
+     * Recursive method, effectively depth-first
      * <p>
      * O(n) time, O(n) space (O(logn) for the recursive stack?)
      * </p>
@@ -49,6 +50,9 @@ public class ConvertSortedArrayToBinarySearchTree {
         return head;
     }
 
+    /**
+     * Helper method for convertSortedArrayToBST1()
+     */
     public static TreeNode convertSortedArrayToBST1Helper(int[] nums, int low, int high) {
         // Done
         if (low > high) {
@@ -60,5 +64,68 @@ public class ConvertSortedArrayToBinarySearchTree {
         node.left = convertSortedArrayToBST1Helper(nums, low, mid - 1);
         node.right = convertSortedArrayToBST1Helper(nums, mid + 1, high);
         return node;
+    }
+
+    /**
+     * Iterative DFS to convert sorted array to (height-balanced) BST
+     * <p>
+     * O(n) time, O(n) space
+     * </p>
+     *
+     * @param nums the array of integers to be converted to a BST
+     * @return the root node of the resultant BST
+     */
+    public static TreeNode convertSortedArrayToBST2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+        // TreeNode values are placeholders, will be assigned after it is popped from the stack
+        TreeNode root = new TreeNode(0);
+        Stack<MyNode> nodeStack = new Stack<>();
+        nodeStack.push(new MyNode(root, 0, nums.length - 1));
+
+        while (!nodeStack.isEmpty()) {
+            MyNode currNode = nodeStack.pop();
+            int medianIndex = midpoint(currNode.leftIndex, currNode.rightIndex);
+            currNode.node.val = nums[medianIndex];
+            // go as deep as possible on left: remember stack is LIFO
+            if (currNode.rightIndex > medianIndex) {
+                currNode.node.right = new TreeNode(0);
+                nodeStack.push(new MyNode(currNode.node.right, medianIndex + 1, currNode.rightIndex));
+            }
+            if (currNode.leftIndex < medianIndex) {
+                currNode.node.left = new TreeNode(0);
+                nodeStack.push(new MyNode(currNode.node.left, currNode.leftIndex, medianIndex - 1));
+            }
+        }
+        return root;
+    }
+
+    /**
+     * Private class to encapsulate the extra information needed to convert from sorted array:
+     * leftIndex and rightIndex indicate the bounds of the node's children (what section of the
+     * sorted array the subtree accounts for)
+     */
+    private static class MyNode {
+        TreeNode node;
+        int leftIndex, rightIndex;
+
+        public MyNode(TreeNode node, int leftIndex, int rightIndex) {
+            this.node = node;
+            this.leftIndex = leftIndex;
+            this.rightIndex = rightIndex;
+        }
+    }
+
+    /**
+     * Returns the midpoint of the given interval (both lower and upper endpoints given are
+     * inclusive), with truncation to nearest int
+     *
+     * @param lowerBound inclusive lower bound of the interval
+     * @param upperBound inclusive upper bound
+     */
+    private static int midpoint(int lowerBound, int upperBound) {
+        assert (lowerBound <= upperBound);
+        return lowerBound + (upperBound - lowerBound) / 2;
     }
 }
