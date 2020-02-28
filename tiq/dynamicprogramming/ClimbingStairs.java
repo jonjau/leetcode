@@ -137,8 +137,31 @@ public class ClimbingStairs {
         dp[1] = 1;
         dp[2] = 2;
         for (int i = 3; i <= n; i++) {
-            dp[i] = dp[i-1] + dp[i-2];
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
         return dp[n];
+    }
+
+    /**
+     * Fibonacci Solution, following from DP solution
+     * <p>
+     * O(n) time, O(1) space
+     * </p>
+     *
+     * @param n the destination step
+     * @return number of distinct ways to arrange steps of 1 and/or 2 to get to n, starting from i
+     */
+    public static int climbStairs4(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        int first = 1;
+        int second = 2;
+        for (int i = 3; i <= n ; i++) {
+            int third = first + second;
+            first = second;
+            second = third;
+        }
+        return second;
     }
 }
