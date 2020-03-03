@@ -36,7 +36,8 @@ public class MaximumSubarray {
         // maxEndingHere is the current subarray sum being considered
         int maxSumSoFar = nums[0];
         int maxEndingHere = nums[0];
-        for (int i = 0; i < nums.length; i++) {
+        // note loop starts from second number
+        for (int i = 1; i < nums.length; i++) {
             // add next number to current subarray sum or just fresh start
             maxEndingHere = Math.max(maxEndingHere + nums[i], nums[i]);
             maxSumSoFar = Math.max(maxEndingHere, maxSumSoFar);
