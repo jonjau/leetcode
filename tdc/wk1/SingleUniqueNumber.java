@@ -1,9 +1,6 @@
-package tiq.array;
+package tdc.wk1;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Given a non-empty array of integers,
@@ -13,7 +10,10 @@ public class SingleUniqueNumber {
 
     public static int run() {
         int[] nums = {8,8,4,1,2,1,2};
-        return singleUniqueNumber3(nums);
+        int ans = singleUniqueNumber3(nums);
+        System.out.println(Arrays.toString(nums));
+        System.out.println(ans);
+        return ans;
     }
 
     /**
@@ -23,7 +23,7 @@ public class SingleUniqueNumber {
      */
     public static Integer singleUniqueNumber1(int[] nums) {
         // using hashSet should also work
-       Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         for (Integer num : nums) {
             if (map.containsKey(num)) {
