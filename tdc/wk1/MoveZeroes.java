@@ -1,4 +1,4 @@
-package tiq.array;
+package tdc.wk1;
 
 import tiq.util.ArrayUtils;
 
