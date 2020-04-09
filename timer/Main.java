@@ -11,7 +11,7 @@ public class Main {
         System.out.println("Now running " + repeats + " time(s):");
         for (int i = 0; i < repeats; i++) {
             long startTime = System.nanoTime();
-            tdc.wk2.MiddleOfLinkedList.run();
+            tdc.wk2.BackspaceStringCompare.run();
             long endTime = System.nanoTime();
             long elapsedTime = endTime - startTime;
             // 1 second = 1_000_000_000 nanoseconds
