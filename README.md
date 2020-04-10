@@ -1,6 +1,6 @@
 # Leetcode Solutions
 
-Solutions to leetcode problems. Most of them are not original.
+Solutions to leetcode problems, most of which are not original.
 
 Problems:
 
