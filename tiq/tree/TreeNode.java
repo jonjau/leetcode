@@ -10,4 +10,12 @@ public class TreeNode {
         this.left = null;
         this.right = null;
     }
+
+    public TreeNode getRight() {
+        return right;
+    }
+
+    public TreeNode getLeft() {
+        return left;
+    }
 }
