@@ -89,14 +89,13 @@ public class PerformStringShifts {
      * @return the rotated string
      */
     private static String rotateString(String s, int nShifts) {
+        nShifts %= s.length();
         if (nShifts < 0) {
             nShifts = -nShifts;
-            nShifts %= s.length();
             String s1 = s.substring(s.length() - nShifts, s.length());
             String s2 = s.substring(0, s.length() - nShifts);
             return s1 + s2;
         } else if (nShifts > 0) {
-            nShifts %= s.length();
             String s2 = s.substring(0, nShifts);
             String s1 = s.substring(nShifts, s.length());
             return s1 + s2;
