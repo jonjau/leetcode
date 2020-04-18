@@ -4,25 +4,25 @@ package tdc.wk3;
  * Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is
  * surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You
  * may assume all four edges of the grid are all surrounded by water.
- *
+ * <p>
  * Example 1:
- *
+ * <p>
  * Input:
  * 11110
  * 11010
  * 11000
  * 00000
- *
+ * <p>
  * Output: 1
- *
+ * <p>
  * Example 2:
- *
+ * <p>
  * Input:
  * 11000
  * 11000
  * 00100
  * 00011
- *
+ * <p>
  * Output: 3
  */
 public class NumberOfIslands {
@@ -35,10 +35,10 @@ public class NumberOfIslands {
 
     public static int run() {
         char[][] grid =
-                {{'1','1','1','1','0'},
-                 {'1','1','0','1','0'},
-                 {'1','1','0','0','0'},
-                 {'0','0','0','0','0'}};
+                {{'1', '1', '1', '1', '0'},
+                        {'1', '1', '0', '1', '0'},
+                        {'1', '1', '0', '0', '0'},
+                        {'0', '0', '0', '0', '0'}};
         int ans = numberOfIslands1(grid);
         System.out.println(ans);
         return ans;
@@ -47,12 +47,13 @@ public class NumberOfIslands {
     /**
      * Given a 2d grid map of '1's (land) and '0's (water),
      * count the number of islands.
-     *
+     * <p>
      * This method approaches the problem as one of depth-first connected
      * components search
      * <p>
-     *     O(n) time, O(n) space
+     * O(n) time, O(n) space
      * </p>
+     *
      * @param grid, the given grid.
      * @return the number of islands.
      */
@@ -83,9 +84,9 @@ public class NumberOfIslands {
 
     /**
      * Marks the given site as visited, then checks adjacent sites.
-     *
+     * <p>
      * Or, Marks the given site as water, if land, then checks adjacent sites.
-     *
+     * <p>
      * Or, Given one coordinate (i,j) of an island, obliterates the island
      * from the given grid, so that it is not counted again.
      *
