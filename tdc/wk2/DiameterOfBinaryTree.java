@@ -68,8 +68,8 @@ public class DiameterOfBinaryTree {
         if (node == null) {
             return 0;
         }
-        int leftMaxDepth = maxDepth(node.getLeft());
-        int rightMaxDepth = maxDepth(node.getRight());
+        int leftMaxDepth = maxDepth(node.left);
+        int rightMaxDepth = maxDepth(node.right);
         // update diameter so far if needed
         ans = Math.max(ans, leftMaxDepth +  rightMaxDepth + 1);
         return 1 + Math.max(leftMaxDepth, rightMaxDepth);
