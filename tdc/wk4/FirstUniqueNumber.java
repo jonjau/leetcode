@@ -74,6 +74,9 @@ import java.util.*;
  */
 public class FirstUniqueNumber {
 
+    /**
+     * ^^^ THIS IS VERY SIMILAR TO LRU CACHE IMPLEMENTATION
+     */
     private static class FirstUnique {
         Map<Integer, DoublyLinkedList.Node> seen;
         DoublyLinkedList list;
