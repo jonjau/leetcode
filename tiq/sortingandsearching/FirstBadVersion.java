@@ -24,7 +24,9 @@ package tiq.sortingandsearching;
  */
 public class FirstBadVersion {
     public static int run() {
-        return firstBadVersion1(5);
+        int ans = firstBadVersion1(5);
+        System.out.println(ans);
+        return ans;
     }
 
     /**
