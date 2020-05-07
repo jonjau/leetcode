@@ -20,7 +20,7 @@ public class TreeNode {
                     .append(isTail ? "│   " : "    "), false, sb);
         }
         sb.append(prefix).append(isTail ? "└── " : "┌── ")
-                .append(Integer.toString(this.val)).append("\n");
+                .append(this.val).append("\n");
         if (left != null) {
             left.toString(new StringBuilder().append(prefix)
                     .append(isTail ? "    " : "│   "), true, sb);
@@ -28,8 +28,12 @@ public class TreeNode {
         return sb;
     }
 
+    public String asString() {
+        return this.toString(new StringBuilder(), true, new StringBuilder()).toString();
+    }
+
     @Override
     public String toString() {
-        return this.toString(new StringBuilder(), true, new StringBuilder()).toString();
+        return String.valueOf(this.val);
     }
 }
