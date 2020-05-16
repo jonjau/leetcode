@@ -13,6 +13,7 @@ public class ListNode {
 
     /**
      * Appends a new ListNode to this node with the given value
+     *
      * @param val the value which the new node is to contain
      * @return the appended ListNode
      */

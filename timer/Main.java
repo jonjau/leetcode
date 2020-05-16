@@ -1,7 +1,5 @@
 package timer;
 
-import tdc2.wk3.MaximumSumCircularSubarray;
-
 /**
  * Main
  */
@@ -13,7 +11,7 @@ public class Main {
         System.out.println("Now running " + repeats + " time(s):");
         for (int i = 0; i < repeats; i++) {
             long startTime = System.nanoTime();
-            MaximumSumCircularSubarray.run();
+            tdc2.wk3.OddEvenLinkedList.run();
             long endTime = System.nanoTime();
             long elapsedTime = endTime - startTime;
             // 1 second = 1_000_000_000 nanoseconds
