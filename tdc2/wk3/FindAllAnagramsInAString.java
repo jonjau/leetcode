@@ -82,7 +82,7 @@ public class FindAllAnagramsInAString {
                 // decrement count of the current char if it is in the pattern
                 // if this brings it to 0, then reduce the number of unique chars in the map too
                 patternCharMap.put(currChar, patternCharMap.get(currChar) - 1);
-                if (patternCharMap.get(currChar) == 0) counter--;
+                if (patternCharMap.get(currChar) == 0)counter--;
             }
             // we have accounted for the character at 'end': end of window moves forward
             end++;
