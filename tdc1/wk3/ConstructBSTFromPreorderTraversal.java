@@ -30,7 +30,7 @@ public class ConstructBSTFromPreorderTraversal {
     public static TreeNode run() {
         int[] preorder = {8, 5, 1, 7, 10, 12};
         TreeNode root = constructBSTFromPreorderTraversal1(preorder);
-        System.out.print(root.toString());
+        System.out.println(root.toString());
         return root;
     }
 
