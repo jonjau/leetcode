@@ -1,11 +1,11 @@
 "use strict";
 
 export {}
-const { run } = require("../tiq/math/fizzbuzz");
+const { runIsValid } = require("../tiq/other/validParentheses");
 
 function main() {
     console.time("solution")
-    run()
+    runIsValid()
     console.timeEnd("solution")
 }
 
