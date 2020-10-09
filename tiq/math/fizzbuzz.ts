@@ -5,7 +5,7 @@
  * for the multiples of five output “Buzz”. For numbers which are multiples of
  * both three and five output “FizzBuzz”.
  */
-function run(): string[] {
+function runFizzBuzz(): string[] {
     let result = fizzBuzz(100);
     console.log(result);
     return result;
@@ -25,4 +25,4 @@ function fizzBuzz(n: number): string[] {
     });
 }
 
-module.exports = { run }
+module.exports = { runFizzBuzz }

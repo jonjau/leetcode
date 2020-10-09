@@ -1,11 +1,11 @@
 "use strict";
 
 export {}
-const { runIsValid } = require("../tiq/other/validParentheses");
+const s = require("../tiq/math/romanToInteger");
 
 function main() {
     console.time("solution")
-    runIsValid()
+    s.runRomanToInt()
     console.timeEnd("solution")
 }
 
