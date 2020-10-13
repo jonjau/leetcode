@@ -4,7 +4,7 @@ import kotlin.system.measureNanoTime
 
 fun main() {
     val executionTime = measureNanoTime {
-        tiq.math.runFizzBuzz()
+        tiq.other.runMissingNumber()
     }
     val seconds = executionTime / 1_000_000_000
     println("--- $seconds seconds ---")
