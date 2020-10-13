@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	s "github.com/jonjau/lc/tiq/math"
+	s "github.com/jonjau/lc/tiq/other"
 )
 
 func elapsed(what string) func() {
@@ -16,5 +16,5 @@ func elapsed(what string) func() {
 
 func main() {
     defer elapsed("solution")()
-    s.RunCountPrimes()
+    s.RunPascalsTriangle()
 }
