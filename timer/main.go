@@ -16,5 +16,5 @@ func elapsed(what string) func() {
 
 func main() {
     defer elapsed("solution")()
-    s.RunPascalsTriangle()
+    s.RunHammingDistance()
 }
