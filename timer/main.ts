@@ -1,12 +1,11 @@
 "use strict";
 
-export {}
-const s = require("../tiq/math/romanToInteger");
+import { runHammingWeight } from "../tiq/other/numberOf1Bits";
 
 function main() {
-    console.time("solution")
-    s.runRomanToInt()
-    console.timeEnd("solution")
+    console.time("solution");
+    runHammingWeight()
+    console.timeEnd("solution");
 }
 
-main()
+main();

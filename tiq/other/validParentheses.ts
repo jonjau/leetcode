@@ -37,4 +37,4 @@ function isValid(s: string): boolean {
     return stack.length == 0;
 };
 
-module.exports = { runIsValid }
+export { runIsValid }
