@@ -1,10 +1,10 @@
 "use strict";
 
-import { runHammingWeight } from "../tiq/other/numberOf1Bits";
+import { runShuffleAnArray } from "../tiq/design/shuffleAnArray";
 
 function main() {
     console.time("solution");
-    runHammingWeight()
+    runShuffleAnArray();
     console.timeEnd("solution");
 }
 
