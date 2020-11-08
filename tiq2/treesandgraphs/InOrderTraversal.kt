@@ -39,18 +39,18 @@ Recursive solution is trivial, could you do it iteratively?
 fun runInOrderTraversal() {
     val root = TreeNode(3)
     root.left = TreeNode(0)
-    println(InOrderTraversal(root))
+    println(inOrderTraversal(root))
 }
 
 /**
  * O(n) time, O(n) space
  */
-fun InOrderTraversal(root: TreeNode?): List<Int> =
+fun inOrderTraversal(root: TreeNode?): List<Int> =
     if (root == null) {
         emptyList()
     } else {
-        val left = InOrderTraversal(root.left)
-        val right = InOrderTraversal(root.right)
+        val left = inOrderTraversal(root.left)
+        val right = inOrderTraversal(root.right)
         val curr = root.`val`
         left + curr + right
     }
