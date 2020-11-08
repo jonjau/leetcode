@@ -27,9 +27,9 @@ fun binaryTreeFromPreorderAndInorder(preorder: IntArray, inorder: IntArray): Tre
         else -> {
             val index =  inorder.indexOf(preorder.head)
             val leftIn = inorder.sliceArray(0..index-1)
-             val rightIn = inorder.sliceArray(index+1..preorder.size-1)
-            val leftPre = preorder.sliceArray(1..leftIn.size)
-            val rightPre = preorder.sliceArray(leftIn.size+1..preorder.size-1)
+            val rightIn = inorder.sliceArray(index+1..preorder.size-1)
+            val leftPre = preorder.sliceArray(1..index)
+            val rightPre = preorder.sliceArray(index+1..preorder.size-1)
 
             val left = binaryTreeFromPreorderAndInorder(leftPre, leftIn)
             val right = binaryTreeFromPreorderAndInorder(rightPre, rightIn)
