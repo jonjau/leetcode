@@ -1,10 +1,10 @@
 "use strict";
 
-import { runShuffleAnArray } from "../tiq/design/shuffleAnArray";
+import { runSubsets } from "../tiq2/backtracking/subsets";
 
 function main() {
     console.time("solution");
-    runShuffleAnArray();
+    runSubsets();
     console.timeEnd("solution");
 }
 
