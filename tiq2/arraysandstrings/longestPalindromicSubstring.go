@@ -35,14 +35,18 @@ import "fmt"
 func RunLongestPalindromicSubstring() {
 	tests := []string{
 		"aba",
+		"ababa",
 		"asdsdaljkjlk",
 		"",
 		"a",
+		"ab",
+		"bb",
 		"abb",
 	}
 	for _, test := range tests {
 		// fmt.Println(isPalindrome(test))
-		fmt.Println(longestPalindromicSubstring(test))
+		// fmt.Println(longestPalindromicSubstring(test))
+		fmt.Println(longestPalindromicSubstring2(test))
 	}
 }
 
@@ -79,3 +83,38 @@ func longestPalindromicSubstring(s string) string {
 	return longest
 }
 
+// O(n^2) time, O(n^2) space
+// DP
+// slower than most submissions still...
+func longestPalindromicSubstring2(s string) string {
+	n := len(s)
+	if n == 0 || n == 1 {
+		return s
+	}
+	// dp[i][j] is true if s[i:j+1] is a palindrome
+	dp := make([][]bool, n)
+	for i := range dp {
+		dp[i] = make([]bool, n)
+		// initialise one and two letter substrings palindromes
+		dp[i][i] = true
+		if i < n - 1 {
+			dp[i][i+1] = s[i] == s[i+1]
+		}
+	}
+	// initialise palindromes of length greater than 2
+	for j := 2; j < n; j++ {
+		for i := 0; i < j - 1; i++ {
+			dp[i][j] = dp[i+1][j-1] && s[i] == s[j]
+		}
+	}
+	// find in the DP grid the largest difference between j and i
+	longest := s[:1]
+	for j := 0; j < n; j++ {
+		for i := 0; i <= j; i++ {
+			if dp[i][j] && j + 1 - i > len(longest) {
+				longest = s[i:j+1]
+			}
+		}
+	}
+	return longest
+}
