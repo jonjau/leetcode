@@ -34,14 +34,14 @@ import "fmt"
 //	s consist of only digits and English letters
 func RunLongestPalindromicSubstring() {
 	tests := []string{
-		"aba",
-		"ababa",
-		"asdsdaljkjlk",
-		"",
-		"a",
-		"ab",
-		"bb",
-		"abb",
+		"aba",          // aba
+		"ababa",        // ababa
+		"asdsdaljkjlk", // ljkjl
+		"",             //
+		"a",            // a
+		"ab",           // a
+		"bb",           // bb
+		"abb",          // bb
 	}
 	for _, test := range tests {
 		// fmt.Println(isPalindrome(test))
@@ -75,7 +75,7 @@ func longestPalindromicSubstring(s string) string {
 	// check for each slice j:i in s, if it's a palindrome
 	for i := 1; i <= n; i++ {
 		for j := 0; j < i; j++ {
-			if isPalindrome(s[j:i]) && i - j > len(longest) {
+			if isPalindrome(s[j:i]) && i-j > len(longest) {
 				longest = s[j:i]
 			}
 		}
@@ -97,13 +97,13 @@ func longestPalindromicSubstring2(s string) string {
 		dp[i] = make([]bool, n)
 		// initialise one and two letter substrings palindromes
 		dp[i][i] = true
-		if i < n - 1 {
+		if i < n-1 {
 			dp[i][i+1] = s[i] == s[i+1]
 		}
 	}
 	// initialise palindromes of length greater than 2
 	for j := 2; j < n; j++ {
-		for i := 0; i < j - 1; i++ {
+		for i := 0; i < j-1; i++ {
 			dp[i][j] = dp[i+1][j-1] && s[i] == s[j]
 		}
 	}
@@ -111,8 +111,8 @@ func longestPalindromicSubstring2(s string) string {
 	longest := s[:1]
 	for j := 0; j < n; j++ {
 		for i := 0; i <= j; i++ {
-			if dp[i][j] && j + 1 - i > len(longest) {
-				longest = s[i:j+1]
+			if dp[i][j] && j+1-i > len(longest) {
+				longest = s[i : j+1]
 			}
 		}
 	}
