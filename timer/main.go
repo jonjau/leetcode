@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	s "github.com/jonjau/lc/tiq2/dynamicprogramming"
+	s "github.com/jonjau/lc/tiq2/linkedlist"
 )
 
 func elapsed(what string) func() {
@@ -16,5 +16,5 @@ func elapsed(what string) func() {
 
 func main() {
     defer elapsed("solution")()
-    s.RunCoinChange()
+    s.RunAddTwoNumbers()
 }
