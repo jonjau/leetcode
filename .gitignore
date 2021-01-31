@@ -8,6 +8,9 @@ __pycache__/
 
 *.exe
 
+# Rust emits this for debugging
+*.pdb
+
 
 .idea/
 out/

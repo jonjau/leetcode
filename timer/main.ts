@@ -1,10 +1,10 @@
 "use strict";
 
-import { runSubsets } from "../tiq2/backtracking/subsets";
+import { runPermutations } from "../tiq2/backtracking/permutations";
 
 function main() {
     console.time("solution");
-    runSubsets();
+    runPermutations();
     console.timeEnd("solution");
 }
 
