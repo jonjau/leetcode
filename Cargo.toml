@@ -1,0 +1,15 @@
+[package]
+name = "lc"
+version = "0.1.0"
+authors = ["jonjau <jonjau3Q@gmail.com>"]
+edition = "2018"
+
+# custom binary, instead of the default src/main.rs
+[[bin]]
+name = "timer"
+path = "./timer/main.rs"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
